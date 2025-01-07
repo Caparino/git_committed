@@ -4,7 +4,7 @@ import subprocess
 from datetime import datetime, timedelta
 import random
 
-START_DATE = datetime(2024, 1, 1)
+START_DATE = datetime(2024, 12, 1)
 
 def calculate_days_between(start_date):
     """
@@ -27,6 +27,8 @@ def create_commits(start_date, file_name, commit_message):
     """
     # Calculate the total number of days
     num_days = calculate_days_between(start_date)
+
+    print(f"Total days to commit: {num_days}")
 
     for day in range(num_days + 1):  # Include today
         current_date = start_date + timedelta(days=day)
